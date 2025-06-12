@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://morganimix.github.io/nanifish.github.io/</loc>
-    <lastmod>2025-06-11T16:57:06+08:00</lastmod>
-  </url><url>
-    <loc>https://morganimix.github.io/nanifish.github.io/posts/</loc>
-    <lastmod>2025-06-11T16:57:06+08:00</lastmod>
-  </url><url>
-    <loc>https://morganimix.github.io/nanifish.github.io/posts/mypost/</loc>
-    <lastmod>2025-06-11T16:57:06+08:00</lastmod>
-  </url><url>
     <loc>https://morganimix.github.io/nanifish.github.io/posts/template/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -32,7 +23,13 @@
     <loc>https://morganimix.github.io/nanifish.github.io/tags/mathjax/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://morganimix.github.io/nanifish.github.io/</loc>
+    <lastmod>2016-02-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://morganimix.github.io/nanifish.github.io/tags/pandoc/</loc>
+    <lastmod>2016-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://morganimix.github.io/nanifish.github.io/posts/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://morganimix.github.io/nanifish.github.io/tags/rstudio/</loc>
@@ -40,5 +37,7 @@
   </url><url>
     <loc>https://morganimix.github.io/nanifish.github.io/tags/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://morganimix.github.io/nanifish.github.io/posts/homelab/</loc>
   </url>
 </urlset>
