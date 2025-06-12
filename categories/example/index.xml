@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Nanifish blog</title>
-    <link>https://morganimix.github.io/nanifish.github.io/posts/</link>
-    <description>Recent content in Posts on Nanifish blog</description>
+    <title>Example on Nanifish blog</title>
+    <link>https://morganimix.github.io/nanifish.github.io/categories/example/</link>
+    <description>Recent content in Example on Nanifish blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jun 2025 16:57:06 +0800</lastBuildDate>
-    <atom:link href="https://morganimix.github.io/nanifish.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>This is the post title</title>
-      <link>https://morganimix.github.io/nanifish.github.io/posts/mypost/</link>
-      <pubDate>Wed, 11 Jun 2025 16:57:06 +0800</pubDate>
-      <guid>https://morganimix.github.io/nanifish.github.io/posts/mypost/</guid>
-      <description>&lt;p&gt;This is some content&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
+    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://morganimix.github.io/nanifish.github.io/categories/example/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Plain Markdown Post</title>
       <link>https://morganimix.github.io/nanifish.github.io/posts/template/</link>
