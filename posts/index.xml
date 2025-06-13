@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Nanifish blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://morganimix.github.io/nanifish.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing an algorithm to determine if a number is happy using Python</title>
+      <link>https://morganimix.github.io/nanifish.github.io/posts/leetcode/</link>
+      <pubDate>Fri, 13 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://morganimix.github.io/nanifish.github.io/posts/leetcode/</guid>
+      <description>&lt;h1 id=&#34;leetcode&#34;&gt;Leetcode&lt;/h1&gt;&#xA;&lt;p&gt;Leetcode is an interview question bank for coding, which appears in varius tech companies. Today I will share how I tackle one of the questions.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-question&#34;&gt;The question&lt;/h1&gt;&#xA;&lt;p&gt;The question asks me to write an algorithm to determine if a number is happy. A happy number is a number defines by the following process:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Starting with any positive integer, replace the number by the sum of the squares of its digits.&lt;/li&gt;&#xA;&lt;li&gt;Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.&lt;/li&gt;&#xA;&lt;li&gt;Those numbers for which this process ends in 1 are happy.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;In short, write some code that returns true if n is a happy number, and false if not.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Starting your Homelab Journey: A Beginners Guide</title>
       <link>https://morganimix.github.io/nanifish.github.io/posts/homelab/</link>

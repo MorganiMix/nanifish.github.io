@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Writing an algorithm to determine if a number is happy using Python | Nanifish blog</title>
+    <link rel="stylesheet" href="/nanifish.github.io/css/style.css" />
+    <link rel="stylesheet" href="/nanifish.github.io/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Writing an algorithm to determine if a number is happy using Python</span></h1>
+<h2 class="author">Morgan Ho</h2>
+<h2 class="date">2025/06/13</h2>
+</div>
+
+<main>
+<h1 id="leetcode">Leetcode</h1>
+<p>Leetcode is an interview question bank for coding, which appears in varius tech companies. Today I will share how I tackle one of the questions.</p>
+<h1 id="the-question">The question</h1>
+<p>The question asks me to write an algorithm to determine if a number is happy. A happy number is a number defines by the following process:</p>
+<ol>
+<li>Starting with any positive integer, replace the number by the sum of the squares of its digits.</li>
+<li>Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.</li>
+<li>Those numbers for which this process ends in 1 are happy.</li>
+</ol>
+<p>In short, write some code that returns true if n is a happy number, and false if not.</p>
+<p>Example 1:
+Input: n = 19
+Output: true
+Explanation:
+1^2 + 9^2 = 82
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 0^2 = 1</p>
+<p>Example 2:
+Input n = 2
+Output: false</p>
+<h1 id="my-approach-to-the-problem">My approach to the problem</h1>
+<p>Let&rsquo;s start out with something easy. First, I create a variable &rsquo;total&rsquo; to calculate the sum of the squares of its digits for 1 iteration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isHappy</span>(self, n: int) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>        total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># find the number of digits of a number.</span>
+</span></span><span style="display:flex;"><span>        length <span style="color:#f92672">=</span> len(str(n)) 
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># do a for loop for the amount of times equal to the digits a number has.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (length):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># a number with modulus 10 is the last digit. Square it.</span>
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">+=</span> (n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># integer division by 10 to find the second last digit, third last and so on.</span>
+</span></span><span style="display:flex;"><span>            n <span style="color:#f92672">=</span> n<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>        n <span style="color:#f92672">=</span> total
+</span></span></code></pre></div><p>I have used &rsquo;total&rsquo; to store the first process of summation of squaring all the digits. However, we need to repeat the process. Using another for loop to repeat it 10 times first and view the results using print(). It will be changed to while loop after conditions of breaking the loop is set.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isHappy</span>(self, n: int) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># repeat 10 times as placeholder</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># find the number of digits of a number.</span>
+</span></span><span style="display:flex;"><span>            length <span style="color:#f92672">=</span> len(str(n)) 
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># do a for loop for the amount of times equal to the digits a number has.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (length):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># a number with modulus 10 is the last digit. Square it.</span>
+</span></span><span style="display:flex;"><span>                total <span style="color:#f92672">+=</span> (n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># integer division by 10 to find the second last digit, third last and so on.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#f92672">=</span> n<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># repeat the same process with previous result </span>
+</span></span><span style="display:flex;"><span>            n <span style="color:#f92672">=</span> total
+</span></span><span style="display:flex;"><span>            print(total)
+</span></span></code></pre></div><p>Then, I add a flag to show if a number is happy number. It starts with False and change to true if total equals to 1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isHappy</span>(self, n: int) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>        ishappynumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># repeat 10 times as placeholder</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># find the number of digits of a number.</span>
+</span></span><span style="display:flex;"><span>            length <span style="color:#f92672">=</span> len(str(n)) 
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># do a for loop for the amount of times equal to the digits a number has.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (length):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># a number with modulus 10 is the last digit. Square it.</span>
+</span></span><span style="display:flex;"><span>                total <span style="color:#f92672">+=</span> (n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># integer division by 10 to find the second last digit, third last and so on.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#f92672">=</span> n<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># repeat the same process with previous result</span>
+</span></span><span style="display:flex;"><span>            n <span style="color:#f92672">=</span> total
+</span></span><span style="display:flex;"><span>            print(total)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> total <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                ishappynumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ishappynumber
+</span></span></code></pre></div><p>Writing a break condition if a number is not happy is more challenging. Most online solutions will use an if statement for n&lt;10 because only 1 or 7 will return happy number. To me, the code should be making calculation for any number &rsquo;n&rsquo;, not just hardcoding logic for all numbers under 10. Therefore, my method will check if the number (not equal to 1) has appeared on the list of totals repeatedly. If so, the number is unhappy and the while loop is broken.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">isHappy</span>(self, n: int) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>        ishappynumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># initialise the list of totals </span>
+</span></span><span style="display:flex;"><span>        recordtotal <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># repeat 10 times as placeholder</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># find the number of digits of a number.</span>
+</span></span><span style="display:flex;"><span>            length <span style="color:#f92672">=</span> len(str(n)) 
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># do a for loop for the amount of times equal to the digits a number has.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (length):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># a number with modulus 10 is the last digit. Square it.</span>
+</span></span><span style="display:flex;"><span>                total <span style="color:#f92672">+=</span> (n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># integer division by 10 to find the second last digit, third last and so on.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#f92672">=</span> n<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># repeat the same process with previous result</span>
+</span></span><span style="display:flex;"><span>            n <span style="color:#f92672">=</span> total
+</span></span><span style="display:flex;"><span>            print(total)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> total <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                ishappynumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> total <span style="color:#f92672">in</span> recordtotal:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            recordtotal<span style="color:#f92672">.</span>append(total)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ishappynumber
+</span></span></code></pre></div><p>Although it is slower for the program to calculate if a number is happy, it is less hard coded and shows results based on calculation.</p>
+
+</main>
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+
